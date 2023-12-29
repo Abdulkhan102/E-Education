@@ -1,0 +1,308 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* body {
+    width: auto;
+    background-image: url('https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&h=502&fit=crop&dpr=1');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+    background-color: rgb(227, 0, 0);
+    font-family: 'Font', sans-serif;
+} */
+
+:root {
+    /* ===================COLOURS==================== */
+    /* COLOR MODEE HCL (hue ,saturation,lightness) */
+    --first-color:hsl(222,88%,58%);
+    --dark-color:hsl(222,24%,8%);
+    --title-color:hsl(222,8%,8%);
+    --text-color-light:hsl(222,8%,65%);
+    --white-color:#fff;
+    --body-color:hsl(222,100%,99%);
+    /* --font: slategrey;
+    --background: wheat;
+    --menuColor: slategrey; */
+
+   /* ==============font and typography================ */
+   /*1 rem = 16px */
+   --body-font:'poppins',sans-serif;
+   --small-font-size:.813rem;
+}
+
+
+/* Nav bar styling */
+
+nav{
+    
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    padding: 0 100px;
+    position: fixed;
+    left: 0;
+    display: inline-block;
+    z-index: 1;
+    background-color: #002347;
+
+}
+
+nav .logo p{
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+nav ul{
+    float: right;
+}
+nav li{
+    display: inline-block;
+    list-style: none;
+}
+nav li a{
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0px 30px ;
+    color:#ffffff;
+    text-decoration: none;
+}
+nav li a:hover{
+    color: #fdc632;
+    transition: all 0.4s ease 0s;
+}
+
+/* SEARCH bar styling */
+
+.container{
+    height: 100vh;
+    margin-inline: 1.5rem;
+    display: grid;
+    place-items: center;
+    background-image: url('10.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search{
+    position: relative;
+    width: 76px;
+    height: 76px;
+    background-color: var(--white-color);
+    box-shadow: 0 4x 24px hsla(222, 19%, 73%, 0.1);
+    border-radius: 4rem;
+    padding: 10px;
+    overflow: hidden;
+    transition: width .5s cubic-bezier(.9,0,.3,.9);
+}
+
+.search__input{
+    background-color: rgb(190, 190, 190);
+    border: none;
+    outline: none;
+    width: calc(100% - 64px);
+    height: 100%;
+    border-radius: 4rem;
+    padding-left: 14px;
+    font-family: var(--body-font);
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s;
+}
+
+.search__input:-webkit-autofill{
+    box-shadow: 0 0 0 100px var(--white-color)inset;
+}
+
+.search__button{
+    width: 56px;
+    height: 56px;
+    background-color: var(--dark-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    border: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform .6s cubic-bezier(.9,0,.3,.9);
+
+}
+
+.search__icon,
+.search__close{
+    color: var(--white-color);
+    font-size: 1.5rem;
+    position: absolute;
+    transition: opacity .5s cubic-bezier(.9,0,.3,.9);
+}
+
+.search__close{
+    opacity: 0;
+}
+
+/* search animated */
+.show-search{
+    width: 100%;
+}
+.show-search .search__input{
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.show-search .search__button{
+    transform: rotate(90deg);
+}
+
+.show-search .search__icon{
+    opacity: 0;
+}
+.show-search .search__close{
+    opacity: 1;
+}
+
+/* =======================BREAKPOINTS=================== */
+
+/* For medium device */
+@media screen and (min-width:576px ){
+    .show-search{
+        width: 450px;
+    }
+}
+
+.box{
+    height: 400px;
+    width: 350px;
+    color: #f9f9ff;
+    border: 5px solid white ;
+    background-color: #000;
+    border-radius: 35px;
+    padding: 30px;
+    /* sab cntr me:- */
+    text-align: center
+}
+
+.btn3{
+   margin-top: 10px;
+   text-decoration: none;
+   
+}
+
+.box:hover{
+    background-color: #002347;
+    transition: all 3s ease;
+    motion: var(--text-color-light);
+}
+
+/* For services */
+
+#course{
+    padding: 8vw 8vw 0 8vw;
+    text-align: center;
+    background-color: lightblue;
+}
+
+#course .cource-box {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-gap:1rem;
+    margin: 50px 0 50px 0;
+
+}
+
+#course .cources{
+    text-align: start;
+    background: #f9f9ff;
+    height: 100%;
+    position: relative;
+
+}
+#course .cources img{
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+}
+
+#course .cources .details{
+    padding: 15px 15px 0 15px;
+
+}
+#course .cources .details .star i{
+    color: #fdc93b;
+    font-size: .9rem;
+}
+#course .cources .cost{
+    background-color: #002347;
+    color: #fff;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    bottom: 130px;
+
+}
+
+/* commnuty */
+
+
+#experts{
+  margin: 200px 0px 200px 0px;
+  padding: 8vw 8vw 0 8vw;
+  text-align: center;
+}
+#experts .experts-box{
+   
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:1rem;
+    margin-top: 50px;
+}
+.profile img{
+    border-radius: 50%;
+    border: 3px solid black;
+    box-shadow:  inset 0 -3em 3em #393E46,
+    0 0 0 2px white,
+    0.3em 0.3em 1em #929AAB;
+}
+.profile h6{
+    margin-top: 15px;
+}
+#experts .experts-box .profile{
+    background-color: #c7c7c7;
+    padding: 30px 10px;
+    border-radius: 10px;
+}
+.pro_links{
+   margin-top: 10px;
+}
+.pro_links i {
+    padding: 10px 13px;
+    border: 1px solid rgb(21, 21, 100);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.pro_links i:hover{
+    background: rgb(21, 21, 100);
+    color: #fff;
+    border: 1px solid rgb(21, 21, 100);
+    cursor: pointer;
+}
+
+
+
+
